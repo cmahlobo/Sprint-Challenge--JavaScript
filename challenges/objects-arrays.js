@@ -93,6 +93,9 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+for (let i=0; i<graduates.length; i++){
+  uni.push(graduates[i].university.includes("Uni"));
+}
 console.log(uni);
 
 
@@ -118,6 +121,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+let fullName = zooAnimals.forEach(function(i){
+  animalNames.push(i.animal_name + " " + i.scientific_name);
+})
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -127,6 +133,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
+let lowCase = zooAnimals.map((lowerCase)=>{
+//  return lowerCase.push(lowerCase.animal_name.toLowerCase());
+})
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
