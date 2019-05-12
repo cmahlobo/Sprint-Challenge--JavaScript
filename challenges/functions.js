@@ -6,8 +6,11 @@
   * The last parameter accepts a callback 
   * In the body of the function return the callback with the two parameters that you created
 */
-const consume = function(a, b, cb){
-  alert(a+"and"+ b)
+
+let consume = function(a, b, callback){
+  const a = "a";
+  const b = "b";
+  callback(a,b);
 }
 
 /* Step 2: Create several functions to callback with consume();
@@ -15,16 +18,16 @@ const consume = function(a, b, cb){
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-function add(cb){
-  cb(a + b);
+let add = function (callback){
+  return a+b;
 }
 
 function multiply(cb){
-  return a * b;
+  cb.apply(a*b);
 }
 
 function greeting(cb){
-  return `Hello ${a} ${b}, nice to meet you!`;
+  console.log(`Hello ${a} ${b} , nice to meet you!`);
 }
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */

@@ -84,10 +84,9 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
-for(let i=0; i< graduates.length; i++){
-  contactInfo.push(graduates[i].first_name + ' ' + graduates[i].email);
-}
+const contactInfo = graduates.map((email) => {
+  return {"first_name": email.first_name, "email": email.email }
+});
 console.log(contactInfo);
 
 
@@ -132,9 +131,8 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
-let lowCase = zooAnimals.map((lowerCase)=>{
-//  return lowerCase.push(lowerCase.animal_name.toLowerCase());
+const lowerCase  = zooAnimals.map((animal_name)=>{
+  return {"animal_name":animal_name.animal_name.toLowerCase()};
 })
 console.log(lowerCase); 
 
@@ -143,7 +141,9 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
+const largerPopulation = zooAnimals.filter((animal_name)=>{
+  return animal_name.population<5;
+});
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -151,7 +151,9 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((total, animal_name)=>{
+  return total += animal_name.population;
+}, 0);
 console.log(populationTotal);
 
 
