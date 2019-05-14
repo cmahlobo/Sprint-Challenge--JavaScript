@@ -22,8 +22,8 @@ function consume(a, b, callback){
 }
 
 function multiply(a,b){
-  var result = a+b;
-  return a*b;
+  var result = a*b;
+  return result;
 }
 
 function greeting(a,b){

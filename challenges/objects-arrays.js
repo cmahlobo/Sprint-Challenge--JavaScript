@@ -51,8 +51,7 @@ console.log(tyrannosaurus.period);
 tyrannosaurus.roar = function(){
   return "RAWERSRARARWERSARARARRRR";
 }
-console.log(tyrannosaurus.roar);
-
+tyrannosaurus.roar();
 
 // ==== Arrays ====
 
@@ -94,7 +93,7 @@ console.log(contactInfo);
 const uni = [];
 for (let i=0; i<graduates.length; i++){
   if(graduates[i].university.includes("Uni")) {
-    uni.push(graduates[i]);
+    uni.push(graduates[i].university);
   }
  // uni.push(graduates[i].university.includes("Uni"));
 }
