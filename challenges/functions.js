@@ -7,10 +7,8 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
-let consume = function(a, b, callback){
-  const a = "a";
-  const b = "b";
-  callback(a,b);
+function consume(a, b, callback){
+   return callback(a,b);
 }
 
 /* Step 2: Create several functions to callback with consume();
@@ -18,16 +16,19 @@ let consume = function(a, b, callback){
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-let add = function (callback){
-  return a+b;
+ function add(a,b){
+   var result = a+b;
+  return result;
 }
 
-function multiply(cb){
-  cb.apply(a*b);
+function multiply(a,b){
+  var result = a+b;
+  return a*b;
 }
 
-function greeting(cb){
-  console.log(`Hello ${a} ${b} , nice to meet you!`);
+function greeting(a,b){
+  var result = `Hello ${a} ${b} , nice to meet you!`;
+  return result
 }
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
